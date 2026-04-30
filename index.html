@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Muhawiyah Sales Agency | Shopify Experts</title>
+  <!-- Google Fonts & simple reset -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f4fbf5;
+      --surface: #ffffff;
+      --primary: #064e3b;
+      --accent: #f97316;
+      --accent-soft: #d8f3e4;
+      --muted: #475569;
+      --border: rgba(6, 78, 59, 0.14);
+      --shadow: 0 24px 80px rgba(6, 78, 59, 0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--primary);
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    p:not(.section-subhead) {
+      text-align: justify;
+    }
+
+    #home p {
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .btn-primary,
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #ffffff;
+      padding: 14px 32px;
+      border: none;
+      box-shadow: 0 22px 40px rgba(249, 115, 22, 0.18);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: #ea580c;
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--primary);
+      padding: 14px 32px;
+      border: 1.5px solid var(--border);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.45);
+    }
+
+    .btn-outline:hover {
+      background: rgba(249, 115, 22, 0.1);
+      border-color: rgba(249, 115, 22, 0.28);
+    }
+
+    .section {
+      padding: 88px 0;
+    }
+
+    .section-sm {
+      padding: 64px 0;
+    }
+
+    .hero-section {
+      padding: 88px 0 72px;
+      background: linear-gradient(180deg, rgba(16, 185, 129, 0.08), rgba(255, 255, 255, 1));
+      overflow: hidden;
+    }
+
+    .section-title {
+      font-size: clamp(2.4rem, 2.6vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      margin-bottom: 18px;
+      max-width: 720px;
+      line-height: 1.04;
+      text-align: center;
+    }
+
+    .section-subhead {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 720px;
+      margin: 0 auto 42px;
+      line-height: 1.75;
+      text-align: center;
+    }
+
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+      display: grid;
+      gap: 30px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 0.65rem 1rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .stat-number {
+      font-size: 2.75rem;
+      font-weight: 800;
+      line-height: 1.1;
+      color: var(--primary);
+    }
+
+    .testimonial-card,
+    .skill-card,
+    .service-card,
+    .trust-badge,
+    .portfolio-card,
+    .platform-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .testimonial-card:hover,
+    .service-card:hover,
+    .portfolio-card:hover,
+    .platform-card:hover,
+    .trust-badge:hover {
+      transform: translateY(-4px);
+      border-color: rgba(249, 115, 22, 0.16);
+      box-shadow: 0 28px 55px rgba(6, 78, 59, 0.12);
+    }
+
+    .why-point {
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      padding: 0;
+      text-align: left;
+    }
+
+    .why-point strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.15rem;
+      color: var(--primary);
+    }
+
+    .why-point p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .portfolio-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 22px;
+      margin-bottom: 22px;
+    }
+
+    .hero-photo-wrapper {
+      width: 100%;
+      max-width: 360px;
+      aspect-ratio: 1 / 1;
+      border-radius: 32px;
+      overflow: hidden;
+      margin: 0 auto;
+      box-shadow: 0 24px 40px rgba(6, 78, 59, 0.14);
+    }
+
+    .hero-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 46px;
+    }
+
+    .hero-stats div {
+      text-align: center;
+      color: var(--primary);
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+    }
+
+    .proof-item {
+      background: var(--surface);
+      border-radius: 30px;
+      padding: 26px;
+      text-align: center;
+      font-size: 0.97rem;
+      color: var(--primary);
+      box-shadow: 0 24px 50px rgba(6, 78, 59, 0.08);
+      display: grid;
+      gap: 18px;
+    }
+
+    .proof-item img,
+    .proof-item video {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      border-radius: 18px;
+      min-height: 180px;
+      background: #f3faf1;
+    }
+
+    .proof-item video {
+      display: block;
+    }
+
+    .proof-item strong {
+      display: block;
+      margin-top: 8px;
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .proof-item span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    footer {
+      background: var(--primary);
+      color: #cbd5e1;
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    footer a {
+      color: #cbd5e1;
+    }
+
+    hr {
+      margin: 28px 0;
+      border: 0;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .flex-between {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .trust-badge {
+      text-align: center;
+      padding: 24px;
+    }
+
+    .about-section {
+      background: rgba(16, 185, 129, 0.08);
+    }
+
+    .skills-section,
+    .services-section,
+    .why-section,
+    .pricing-section,
+    .trust-section,
+    .reviews-section {
+      background: #ffffff;
+    }
+
+    .process-section {
+      background: rgba(6, 78, 59, 0.06);
+    }
+
+    .numbers-section {
+      background: rgba(249, 115, 22, 0.08);
+    }
+
+    .testimonials-section {
+      background: rgba(249, 115, 22, 0.08);
+    }
+
+    .faq-section {
+      background: #ffffff;
+    }
+
+    .cta-section {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+    }
+
+    .platforms-section {
+      background: rgba(16, 185, 129, 0.08);
+    }
+
+    .promise-section {
+      background: rgba(6, 78, 59, 0.05);
+    }
+
+    .contact-section {
+      background: rgba(16, 185, 129, 0.08);
+    }
+
+    .section-note {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-top: 12px;
+    }
+
+    .list-clean {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .list-clean li {
+      margin-bottom: 0.9rem;
+      line-height: 1.7;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      background: white;
+      color: var(--primary);
+      font-family: inherit;
+      font-size: 1rem;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: rgba(249, 115, 22, 0.35);
+      box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.12);
+    }
+
+    button[type="submit"] {
+      width: 100%;
+    }
+
+    @media (max-width: 960px) {
+      .grid-2,
+      .grid-3,
+      .grid-4 {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 56px 0;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 0 18px;
+      }
+
+      .flex-between {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 18px;
+      }
+
+      .hero-section,
+      .about-section,
+      .services-section,
+      .numbers-section,
+      .testimonials-section,
+      .pricing-section,
+      .faq-section,
+      .contact-section {
+        padding: 48px 0;
+      }
+
+      .btn-primary,
+      .btn-outline {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .proof-grid,
+      .grid-2,
+      .grid-3,
+      .grid-4 {
+        gap: 18px;
+      }
+
+      .hero-photo-wrapper {
+        max-width: 320px;
+      }
+
+      .hero-stats {
+        gap: 24px;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .section-subhead {
+        margin-bottom: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO SECTION -->
+<section id="home" class="hero-section">
+  <div class="container">
+    <div class="flex-between" style="margin-bottom: 42px;">
+      <div style="font-weight: 800; font-size: 1.6rem;">Muhawiyah Sales Agency</div>
+      <a href="https://wa.me/13684445526?text=Hi!%20I%27m%20interested%20in%20your%20services." class="btn-primary" style="padding: 12px 26px;">Contact →</a>
+    </div>
+    <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+      <h1 style="font-size: 3.3rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.2;">Scale Your E-Commerce.<br>Dominate Digital.</h1>
+      <p style="font-size: 1.25rem; color: var(--muted); margin: 24px 0 32px;">We build high-converting online stores and run data-driven marketing campaigns that turn clicks into customers.</p>
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="https://wa.me/13684445526?text=Hi!%20I%27m%20interested%20in%20your%20services." class="btn-primary">Let's Talk — It's Free</a>
+        <a href="#past-work" class="btn-outline">See Our Work ↓</a>
+      </div>
+      <div class="hero-stats">
+        <div><span class="stat-number">50+</span><br>Clients Helped</div>
+        <div><span class="stat-number">$10M+</span><br>Revenue Generated</div>
+        <div><span class="stat-number">8x</span><br>Avg. ROAS</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER / ABOUT SECTION -->
+<section id="about" class="section about-section">
+  <div class="container">
+    <div class="grid-2" style="align-items: center;">
+      <div>
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+          <div style="width: 60px; height: 60px; background: var(--primary); color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.5rem;">MS</div>
+          <div>
+            <h2 style="font-size: 2rem; font-weight: 800; margin: 0; color: var(--primary);">Muhawiyah Sales Agency</h2>
+            <p style="color: var(--muted); margin: 0;">E-Commerce Growth Strategist & Digital Marketing Expert</p>
+          </div>
+        </div>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 16px;">
+          <span style="display: flex; align-items: center; gap: 6px; font-size: 0.9rem;"><span>🌍</span> Global (Remote)</span>
+          <span style="display: flex; align-items: center; gap: 6px; font-size: 0.9rem;"><span>⏱️</span> Avg. response: 1 hour</span>
+          <span style="display: flex; align-items: center; gap: 6px; font-size: 0.9rem;"><span>📅</span> Member since 2026</span>
+        </div>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 16px;">
+          <span style="font-size: 0.9rem;">English</span>
+          <span style="font-size: 0.9rem;">Arabic</span>
+        </div>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px;">
+          <span class="badge">⭐ 5.0 (Rating)</span>
+          <span class="badge">📈 50+ (Projects)</span>
+          <span class="badge">💰 $10M+ (Revenue Generated)</span>
+        </div>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px;">
+          <a href="https://wa.me/13684445526?text=Hi!%20I%27m%20interested%20in%20your%20services." class="btn-primary">Contact Me</a>
+          <a href="#past-work" class="btn-outline">View Portfolio</a>
+        </div>
+        <p style="margin-bottom: 24px; color: #374151;">I am Muhawiyah Sales, founder of Muhawiyah Sales Agency. I help e-commerce businesses improve store performance, increase conversion rates, and scale revenue with strategic Shopify, WooCommerce, and paid media solutions. With more than five years of experience, I deliver data-driven work that is focused on measurable results. If your store is underperforming, I can help you identify the issues, build a clear action plan, and execute changes that move the business forward. My approach is direct, practical, and results-oriented.</p>
+      </div>
+      <div class="hero-photo-wrapper">
+        <img class="hero-photo" src="image.jpeg" alt="Hero image">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS / EXPERTISE -->
+<section class="section skills-section">
+  <div class="container">
+    <h2 class="section-title">My Skills</h2>
+    <div class="grid-2" style="margin-bottom: 48px;">
+      <div class="skill-card">Shopify Development — 95%</div>
+      <div class="skill-card">Social Ads — 92%</div>
+      <div class="skill-card">Google Ads (PPC) — 90%</div>
+      <div class="skill-card">SEO & Content Strategy — 88%</div>
+      <div class="skill-card">Conversion Rate Optimization — 93%</div>
+      <div class="skill-card">Email & SMS Marketing — 87%</div>
+      <div class="skill-card">TikTok Ads — 85%</div>
+      <div class="skill-card">Brand Strategy & Design — 82%</div>
+      <div class="skill-card">Analytics & Data — 91%</div>
+      <div class="skill-card">WooCommerce — 80%</div>
+    </div>
+    <div class="grid-4" style="text-align: center;">
+      <div><span class="stat-number">50+</span><br>Happy Clients</div>
+      <div><span class="stat-number">$2.4M+</span><br>Revenue Generated</div>
+      <div><span class="stat-number">98%</span><br>Client Satisfaction</div>
+      <div><span class="stat-number">50+</span><br>Projects Delivered</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT I CAN DO FOR YOU (SERVICES) -->
+<section id="services" class="section services-section">
+  <div class="container">
+    <h2 class="section-title">What I Can Do For You</h2>
+    <p class="section-subhead">I don't just offer services — I solve the specific problems holding your store back from making more money.</p>
+    <div class="grid-2">
+      <div class="service-card"><strong>🚀 E-Commerce Development</strong><br>Custom Shopify, WooCommerce & headless stores built for speed, SEO, and conversions.</div>
+      <div class="service-card"><strong>📢 Paid Advertising</strong><br>Social, Google & TikTok ads managed with laser-focused targeting and relentless optimization.</div>
+      <div class="service-card"><strong>🔍 SEO & Content</strong><br>Organic growth strategies that put your brand on page one and keep it there.</div>
+      <div class="service-card"><strong>💌 Email & SMS Marketing</strong><br>Automated flows and campaigns that recover carts, nurture leads, and drive repeat purchases.</div>
+      <div class="service-card"><strong>📊 Conversion Rate Optimization</strong><br>A/B testing, UX audits, and funnel optimization to squeeze more revenue from existing traffic.</div>
+      <div class="service-card"><strong>🎯 Brand Strategy</strong><br>Positioning, messaging, and visual identity that makes your brand unforgettable.</div>
+    </div>
+  </div>
+</section>
+
+<!-- MY PROCESS (4 steps) -->
+<section class="section process-section">
+  <div class="container">
+    <h2 class="section-title">Here's How We Get It Done</h2>
+    <p class="section-subhead">No fluff, no wasted time. Here's the exact 4-step process I use with every single client.</p>
+    <div class="grid-4">
+      <div><span class="badge" style="background:var(--primary); color:white;">1</span><h3 style="margin: 16px 0 8px;">We Talk & I Listen</h3><p>I start by understanding your business, your customers, and what's not working. No assumptions — just real talk about where you are and where you want to be.</p></div>
+      <div><span class="badge" style="background:var(--primary); color:white;">2</span><h3 style="margin: 16px 0 8px;">I Build Your Plan</h3><p>Based on what I find, I put together a clear roadmap with specific steps, timelines, and expected results. You'll know exactly what's happening and when.</p></div>
+      <div><span class="badge" style="background:var(--primary); color:white;">3</span><h3 style="margin: 16px 0 8px;">I Execute — Fast</h3><p>Whether it's building your store, launching ads, or setting up email flows — I get to work immediately. Most clients see their first improvements within 1-2 weeks.</p></div>
+      <div><span class="badge" style="background:var(--primary); color:white;">4</span><h3 style="margin: 16px 0 8px;">We Optimize & Grow</h3><p>This is where the magic happens. I track everything, test new ideas, double down on what's working, and cut what's not. Your store keeps getting better, month after month.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE ME (TRUST) -->
+<section class="section why-section">
+  <div class="container">
+    <div style="max-width: 760px; margin: 0 auto 36px; text-align: center;">
+      <h2 class="section-title">Why Store Owners Choose Me</h2>
+      <p class="section-subhead">A practical, growth-first approach with direct expert support, transparent results, and faster e-commerce performance.</p>
+    </div>
+    <div class="grid-4">
+      <div class="why-point">
+        <strong>Direct Expert Support</strong>
+        <p>Work with the same specialist who builds your strategy and delivers your results — no middlemen, no confusion.</p>
+      </div>
+      <div class="why-point">
+        <strong>Growth-Focused Execution</strong>
+        <p>Every change is designed to improve revenue, conversion, and return on ad spend, not just make the site look better.</p>
+      </div>
+      <div class="why-point">
+        <strong>Fast, Transparent Delivery</strong>
+        <p>I launch campaigns, optimize stores, and share clear weekly progress so you always know what is working.</p>
+      </div>
+      <div class="why-point">
+        <strong>Real Proof, Real Accountability</strong>
+        <p>I base recommendations on actual store results, not assumptions. If it's not moving revenue, I don't keep it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- NUMBERS THAT DON'T LIE -->
+<section class="section numbers-section">
+  <div class="container">
+    <h2 class="section-title">Numbers That Don't Lie</h2>
+    <div class="grid-4" style="text-align: center;">
+      <div><span class="stat-number">$2.4M+</span><br>Revenue Generated<br><small>Real revenue I've helped my clients make — not projections, not estimates</small></div>
+      <div><span class="stat-number">340%</span><br>Avg. ROI Increase<br><small>How much more my clients earn back for every dollar they spend on ads</small></div>
+      <div><span class="stat-number">50+</span><br>Stores Helped<br><small>Online stores I've personally worked with — from brand new launches to 7-figure brands</small></div>
+      <div><span class="stat-number">98%</span><br>Client Retention<br><small>Almost every client stays because the results speak for themselves</small></div>
+    </div>
+    <p style="text-align: center; margin-top: 32px;">Ready to See These Results for Your Store? Every number above came from real stores — verified with actual dashboard screenshots.</p>
+    <div style="text-align: center; margin-top: 16px;">
+      <a href="https://wa.me/13684445526?text=Hi!%20I%27m%20interested%20in%20growing%20my%20store." class="btn-primary">Want These Results? Let's Talk</a>
+    </div>
+  </div>
+</section>
+
+<!-- SALES PROOF GALLERY -->
+<section class="section about-section">
+  <div class="container">
+    <div style="max-width: 760px; margin: 0 auto 40px; text-align: center;">
+      <h2 class="section-title">Sales Proof & Real Results</h2>
+      <p class="section-subhead">These are the actual images and videos from the folder. Images and videos are separated so the layout stays clean and easy to scan.</p>
+    </div>
+    <div style="margin-bottom: 40px;">
+      <h3 style="text-align: center; margin-bottom: 24px; color: var(--primary);">Proof Images</h3>
+      <div class="proof-grid">
+        <div class="proof-item">
+          <img src="step2.jpeg" alt="Sales proof image 1">
+          <strong>$124k revenue</strong>
+          <span>Shopify sales dashboard proof</span>
+        </div>
+        <div class="proof-item">
+          <img src="step3.jpeg" alt="Sales proof image 2">
+          <strong>8x ROAS</strong>
+          <span>Ad campaign performance and spending efficiency</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3 style="text-align: center; margin-bottom: 24px; color: var(--primary);">Proof Videos</h3>
+      <div class="proof-grid">
+        <div class="proof-item">
+          <video autoplay muted loop playsinline>
+            <source src="step1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <strong>Campaign walkthrough</strong>
+          <span>Video proof of the live ad and sales funnel setup.</span>
+        </div>
+        <div class="proof-item">
+          <video autoplay muted loop playsinline>
+            <source src="step4.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <strong>Live dashboard review</strong>
+          <span>Real-time store and ad dashboard details.</span>
+        </div>
+        <div class="proof-item">
+          <video autoplay muted loop playsinline>
+            <source src="step5.mp4" type="video/mp4">
+            Your browser does not support the video tag.</source>
+          </video>
+          <strong>Sales system demo</strong>
+          <span>Growth process from setup to revenue results.</span>
+        </div>
+      </div>
+    </div>
+    <p style="text-align: center; margin-top: 28px; color: var(--muted);">These files are loaded directly from the current folder, so the page now displays your actual proof media.</p>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testimonials-section">
+  <div class="container">
+    <h2 class="section-title">What My Clients Say About Me</h2>
+    <div class="grid-3">
+      <div class="testimonial-card">"Muhawiyah Sales completely transformed our online presence. Our revenue tripled in just 3 months."<br><strong>— Sarah Chen / Luxe Beauty Co</strong></div>
+      <div class="testimonial-card">"The ROI on our ad spend went from 2x to 8x. These guys know what they're doing."<br><strong>— Marcus Thompson / TechGear Pro</strong></div>
+      <div class="testimonial-card">"From store build to marketing — they handled everything and the results speak for themselves."<br><strong>— Elena Rodriguez / Verde Organic</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- STORES I'VE WORKED WITH -->
+<section id="past-work" class="section portfolio-section">
+  <div class="container">
+    <div style="max-width: 720px; margin: 0 auto 40px; text-align: center;">
+      <h2 class="section-title">Portfolio & Selected Stores</h2>
+      <p class="section-subhead">These are the e-commerce brands I’ve helped launch, optimize, and scale with measurable revenue growth and better customer acquisition.</p>
+    </div>
+    <div class="grid-2">
+      <div class="portfolio-card">
+        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1200&q=80" alt="Grace & Glow Store portfolio">
+        <span class="badge">Shopify + CRO</span>
+        <h3>Grace & Glow Store</h3>
+        <p>Built a conversion-first Shopify experience, optimized checkout, and launched targeted campaigns that raised average order value by 28%.</p>
+        <a href="https://graceandglow.shop/en" target="_blank" class="btn-outline">Visit Store</a>
+      </div>
+      <div class="portfolio-card">
+        <img src="https://images.unsplash.com/photo-1521334884684-d80222895322?auto=format&fit=crop&w=1200&q=80" alt="IYKYK Clothing portfolio">
+        <span class="badge">Brand Growth</span>
+        <h3>IYKYK Clothing</h3>
+        <p>Revamped product pages, improved visuals, and scaled Facebook ads for a premium fashion brand — delivering a 340% increase in ROAS.</p>
+        <a href="https://iykyk-clothing.de/" target="_blank" class="btn-outline">Visit Store</a>
+      </div>
+      <div class="portfolio-card">
+        <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=1200&q=80" alt="NanaMacs Clothing portfolio">
+        <span class="badge">Retention & Sales</span>
+        <h3>NanaMacs Clothing</h3>
+        <p>Launched email and SMS flows, improved upsell funnels, and optimized ad creatives to drive repeat purchases and stronger customer lifetime value.</p>
+        <a href="https://nanamacs.com/" target="_blank" class="btn-outline">Visit Store</a>
+      </div>
+      <div class="portfolio-card">
+        <img src="https://images.unsplash.com/photo-1495121605193-b116b5b9c5d1?auto=format&fit=crop&w=1200&q=80" alt="Approche Sport portfolio">
+        <span class="badge">Performance Media</span>
+        <h3>Approche Sport</h3>
+        <p>Delivered a full-funnel growth strategy with data-driven ad management and store enhancements, helping the brand achieve 7x ROAS.</p>
+        <a href="https://approchesport.com/" target="_blank" class="btn-outline">Visit Store</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORMS & TOOLS -->
+<section class="section platforms-section">
+  <div class="container">
+    <h2 class="section-title">Platforms & Tools I Work With</h2>
+    <p class="section-subhead">I use the best tools in the industry to get you results. Not just one platform — whatever your store needs.</p>
+    <div class="grid-4" style="gap: 24px;">
+      <div class="platform-card" style="text-align: center;">Shopify</div>
+      <div class="platform-card" style="text-align: center;">WooCommerce</div>
+      <div class="platform-card" style="text-align: center;">Meta</div>
+      <div class="platform-card" style="text-align: center;">Google Ads</div>
+      <div class="platform-card" style="text-align: center;">Klaviyo</div>
+      <div class="platform-card" style="text-align: center;">Stripe</div>
+      <div class="platform-card" style="text-align: center;">PayPal</div>
+      <div class="platform-card" style="text-align: center;">Mailchimp</div>
+    </div>
+    <p style="text-align: center; margin-top: 24px; color: var(--muted);">…and many more tools tailored to your business needs.</p>
+  </div>
+</section>
+
+<!-- TRUST BADGES + GUARANTEE -->
+<section class="section-sm trust-section">
+  <div class="container">
+    <div class="grid-4">
+      <div class="trust-badge">💰 Money-Back Guarantee<br><span style="font-size:0.75rem;">Not satisfied? Full refund within 30 days. No questions asked.</span></div>
+      <div class="trust-badge">📅 On-Time, Every Time<br><span style="font-size:0.75rem;">I give you a deadline and I stick to it. Period.</span></div>
+      <div class="trust-badge">✅ Certified Professional<br><span style="font-size:0.75rem;">Google, Meta & Shopify certified. I know these platforms inside out.</span></div>
+      <div class="trust-badge">📱 Always Available<br><span style="font-size:0.75rem;">Message me on WhatsApp anytime. I respond within an hour, not days.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- MY PROMISE -->
+<section class="section promise-section">
+  <div class="container">
+    <h2 class="section-title">My Promise to You</h2>
+    <p class="section-subhead">Your money and time are protected</p>
+    <div class="grid-3">
+      <div class="service-card">Don't love the initial design? I'll redo it until you do — at no extra cost</div>
+      <div class="service-card">Full transparency — you get weekly progress updates and access to all analytics</div>
+      <div class="service-card">No hidden fees, ever. The price I quote is the price you pay. That's it.</div>
+      <div class="service-card">Direct WhatsApp access to me throughout the entire project — no bots, no queues</div>
+      <div class="service-card">I only take on projects I know I can deliver results for. If I can't help you, I'll tell you honestly.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="packages" class="section pricing-section">
+  <div class="container">
+    <h2 class="section-title">Simple, Honest Pricing</h2>
+    <p class="section-subhead">No surprises, no upsells. Pick the package that fits where you are right now.</p>
+    <div class="grid-3">
+      <div class="service-card" style="border: 2px solid var(--primary);">
+        <h3>Starter</h3>
+        <p>Perfect for new brands</p>
+        <div style="font-size: 2rem; font-weight: 800; color: var(--primary);">$1,500</div>
+        <small>/project</small>
+        <ul style="list-style: none; padding: 0; margin-top: 16px;">
+          <li>✅ Shopify store setup & design</li>
+          <li>✅ 5 product pages</li>
+          <li>✅ Mobile responsive</li>
+          <li>✅ Basic SEO setup</li>
+          <li>✅ 2 revision rounds</li>
+          <li>✅ 7-day delivery</li>
+        </ul>
+        <a href="https://wa.me/13684445526?text=Hi!%20I%27m%20interested%20in%20your%20Starter%20package.%20Can%20we%20discuss%3F" class="btn-primary" style="margin-top: 16px;">Get Started</a>
+      </div>
+      <div class="service-card" style="border: 2px solid var(--primary); position: relative;">
+        <div style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem;">MOST POPULAR</div>
+        <h3>Growth</h3>
+        <p>For scaling brands</p>
+        <div style="font-size: 2rem; font-weight: 800; color: var(--primary);">$3,500</div>
+        <small>/month</small>
+        <ul style="list-style: none; padding: 0; margin-top: 16px;">
+          <li>✅ Everything in Starter</li>
+          <li>✅ Meta & Google Ads management</li>
+          <li>✅ Email marketing automation</li>
+          <li>✅ Monthly performance reports</li>
+          <li>✅ CRO recommendations</li>
+          <li>✅ Dedicated Slack channel</li>
+        </ul>
+        <a href="https://wa.me/13684445526?text=Hi!%20I%27m%20interested%20in%20your%20Growth%20package.%20Can%20we%20discuss%3F" class="btn-primary" style="margin-top: 16px;">Get Started</a>
+      </div>
+      <div class="service-card" style="border: 2px solid var(--primary);">
+        <h3>Enterprise</h3>
+        <p>Full-stack growth partner</p>
+        <div style="font-size: 2rem; font-weight: 800; color: var(--primary);">Custom</div>
+        <ul style="list-style: none; padding: 0; margin-top: 16px;">
+          <li>✅ Everything in Growth</li>
+          <li>✅ Multi-channel ad management</li>
+          <li>✅ Advanced SEO & content strategy</li>
+          <li>✅ Custom integrations</li>
+          <li>✅ Weekly strategy calls</li>
+          <li>✅ Priority 24/7 support</li>
+        </ul>
+        <a href="https://wa.me/13684445526?text=Hi!%20I%27m%20interested%20in%20your%20Enterprise%20package.%20Can%20we%20discuss%3F" class="btn-primary" style="margin-top: 16px;">Let's Talk</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="section faq-section">
+  <div class="container">
+    <h2 class="section-title">Got Questions?</h2>
+    <p class="section-subhead">Here are the most common ones. If yours isn't listed, please contact me directly on WhatsApp.</p>
+    <div class="grid-2">
+      <div>
+        <h3>What platforms do you work with?</h3>
+        <p>Shopify, WooCommerce, and many more.</p>
+        <hr>
+        <h3>How long before I see results?</h3>
+        <p>Most clients see improvements within 1-2 weeks.</p>
+        <hr>
+        <h3>What's your minimum budget for ad management?</h3>
+        <p>$500/month for ads.</p>
+      </div>
+      <div>
+        <h3>Do you do one-time projects or ongoing work?</h3>
+        <p>Both — depending on your needs.</p>
+        <hr>
+        <h3>Can you work with my existing team?</h3>
+        <p>Absolutely, I collaborate well.</p>
+        <hr>
+        <h3>What if I'm not happy with the results?</h3>
+        <p>100% satisfaction guarantee.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CALL TO ACTION -->
+<section id="contact" class="section cta-section">
+  <div class="container">
+    <h2 class="section-title">Let's Get Your Store Making Money</h2>
+    <p class="section-subhead">Tell me about your store and what you're struggling with. I'll get back to you within a few hours — usually much faster.</p>
+    <div style="display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 24px;">
+      <a href="mailto:muhawiyahsales1@gmail.com" style="display: flex; align-items: center; gap: 8px; color: white; text-decoration: none;">📧 muhawiyahsales1@gmail.com</a>
+      <a href="tel:+12267016522" style="display: flex; align-items: center; gap: 8px; color: white; text-decoration: none;">📱 +1 (226) 701-6522</a>
+    </div>
+    <form style="max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px;">
+      <input type="text" placeholder="Your Name" style="padding: 12px; border: 1px solid var(--border); border-radius: 8px; background: white; color: var(--primary);">
+      <input type="email" placeholder="Your Email" style="padding: 12px; border: 1px solid var(--border); border-radius: 8px; background: white; color: var(--primary);">
+      <textarea placeholder="Tell me about your store and what you need help with..." rows="4" style="padding: 12px; border: 1px solid var(--border); border-radius: 8px; background: white; color: var(--primary);"></textarea>
+      <button type="submit" class="btn-primary" style="background: var(--accent); color: #ffffff;">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 32px; margin-bottom: 32px;">
+      <div>
+        <h3 style="color: white; margin-bottom: 8px;">Muhawiyah Sales</h3>
+        <p style="color: #9ca3af;">Helping e-commerce store owners scale revenue through expert development, marketing, and optimization strategies.</p>
+        <a href="https://wa.me/13684445526?text=Hi!%20I%27m%20interested%20in%20your%20services." class="btn-primary" style="margin-top: 16px;">Chat on WhatsApp</a>
+      </div>
+      <div>
+        <h4 style="color: white; margin-bottom: 8px;">Quick Links</h4>
+        <ul style="list-style: none; padding: 0; color: #9ca3af;">
+          <li><a href="#about" style="color: #9ca3af; text-decoration: none;">About</a></li>
+          <li><a href="#services" style="color: #9ca3af; text-decoration: none;">Services</a></li>
+          <li><a href="#past-work" style="color: #9ca3af; text-decoration: none;">Portfolio</a></li>
+          <li><a href="#packages" style="color: #9ca3af; text-decoration: none;">Pricing</a></li>
+          <li><a href="#contact" style="color: #9ca3af; text-decoration: none;">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color: white; margin-bottom: 8px;">Legal</h4>
+        <ul style="list-style: none; padding: 0; color: #9ca3af;">
+          <li><a href="/policy/privacy" style="color: #9ca3af; text-decoration: none;">Privacy Policy</a></li>
+          <li><a href="/policy/terms" style="color: #9ca3af; text-decoration: none;">Terms of Service</a></li>
+          <li><a href="/policy/refund" style="color: #9ca3af; text-decoration: none;">Refund Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color: white; margin-bottom: 8px;">Contact</h4>
+        <ul style="list-style: none; padding: 0; color: #9ca3af;">
+          <li>📱 <a href="tel:+12267016522" style="color: #9ca3af; text-decoration: none;">+1 (226) 701-6522</a></li>
+          <li>📧 <a href="mailto:muhawiyahsales1@gmail.com" style="color: #9ca3af; text-decoration: none;">muhawiyahsales1@gmail.com</a></li>
+          <li>🌍 Global (Remote)</li>
+        </ul>
+      </div>
+    </div>
+    <p style="text-align: center; color: #9ca3af;">© 2026 Muhawiyah Sales Agency. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- INLINE REPLACEMENT GUIDE (visible comment in code) -->
+<!-- 
+  ============================================================
+  HOW TO CUSTOMIZE THIS TEMPLATE (15 MINUTES)
+  ============================================================
+  1. Replace [YOUR BRAND] / [Your Name] / [Your Agency] with your real info.
+  2. Replace stats [XX]+ , $[X]M+ with your actual numbers (or realistic goals).
+  3. Replace placeholder images in the "proof-grid" section: either replace background color with <img> or add real screenshots.
+  4. Update testimonials with real client quotes (or remove fake-sounding ones).
+  5. Change contact links: email, phone, WhatsApp.
+  6. Use your own photo in the ABOUT area.
+  7. If you don't have certain numbers yet, use aspirational but honest milestones.
+  ============================================================
+-->
+</body>
+</html>
